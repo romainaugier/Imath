@@ -106,7 +106,7 @@ jobs:
 
       - name: Install MSYS2 ${{ inputs.msystem }}
         if: inputs.msystem != ''
-        uses: msys2/setup-msys2@40677d36a502eb2cf0fb808cc9dec31bf6152638 # v2.28.0
+        uses: msys2/setup-msys2@fb197b72ce45fb24f17bf3f807a388985654d1f2 # v2.29.0
         with:
           msystem: ${{ inputs.msystem }}
           update: true
@@ -116,7 +116,7 @@ jobs:
       - name: Install python for MINGW32
         if: inputs.pybind11 == 'ON' && inputs.msystem == 'MINGW32'
         # Note that MINGW32 requires the x86 architecture
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.9'
           architecture: 'x86'
